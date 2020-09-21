@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <title>Scheduler</title>
+</head>
+
+<body>
+    <header id="heading">
+        <h1>Scheduler</h1>
+        <nav id="headerDateAndTime">
+
+        </nav>
+
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="./lib/moment/moment.js"></script>
+    <script>
+     
+     var dateFormat = moment().format("MMM/DD/YYYY dddd");
+     $("#headerDateAndTime").append(dateFormat+"<br>");
+        var timeFormat = moment().format("hh:mm");
+        $("#headerDateAndTime").append(timeFormat);
+        var i=0;
+        var a;
+       for(i=8;i<18;i++){
+            $("main").append("<p>This is the time<p>");
+           //set time of each block to what i equals  
+           //change to table format
+       };
+
+       //function to change background color of time blocks from past, present, and future
+       //same function will have intervals (<,>,=) compared to time(i) of timeblock
+
+
+       
+    
+    </script>
+</body>
+
+</html>
