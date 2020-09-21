@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- add scroll -->
     <header id="heading">
         <h1>Scheduler</h1>
         <nav id="headerDateAndTime">
@@ -20,33 +21,59 @@
     </header>
 
     <main>
-
+        
+        <!-- <input type="text" name="user">
+       <button id="userName">Press to Display</button> -->
+        <table>
+            <tr>
+                <th id="timeCol">Time</th>
+                <th id="taskCol">Task</th> 
+                <th id="saveCol"></th>
+              </tr>
+        </table>
     </main>
-
+    <!-- signiture footer -->
     <footer>
-
+        <div id=text>created by SD_WORKS</div>
+        <div id=image>
+            &copy;<img src="./favicon.ico" alt="juju image">9/20
+        </div>
     </footer>
+    <!-- link to moment.js -->
     <script src="./lib/moment/moment.js"></script>
+    <!-- js for the scheduler header and main elements -->
     <script>
-     
-     var dateFormat = moment().format("MMM/DD/YYYY dddd");
-     $("#headerDateAndTime").append(dateFormat+"<br>");
-        var timeFormat = moment().format("hh:mm");
-        $("#headerDateAndTime").append(timeFormat);
-        var i=0;
-        var a;
-       for(i=8;i<18;i++){
-            $("main").append("<p>This is the time<p>");
-           //set time of each block to what i equals  
-           //change to table format
-       };
-
-       //function to change background color of time blocks from past, present, and future
-       //same function will have intervals (<,>,=) compared to time(i) of timeblock
-
-
-       
+        $(document).ready(function () {
+            var dateFormat = moment().format("MMM/DD/YYYY dddd");
+            $("#headerDateAndTime").append(dateFormat + "<br>");
+            var timeFormat = moment().format("hh:mm");
+            $("#headerDateAndTime").append(timeFormat);
+            var i = 0;
+            var a;
+            
     
+            for (i = 8; i < 18; i++) {
+              //  $("table").append("<p>This is the time<p>");
+                $("table").append("<tr><td id='timeCol'>"+i+":00</td><td id='taskCol'>Place Tasks Here</td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
+                //after scheduler works, change away from military time
+                //set time of each block to what i equals  
+                //change to table format
+            };
+            //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
+            //         $("#userName").click(function(){
+
+            // var Name = $("input").val();
+            // //make if statement clearing the input and button on refresh if there is already a name for the scheduler in local storage
+            //         $("table").prepend();
+            //         }
+
+
+            //function to change background color of time blocks from past, present, and future
+            //same function will have intervals (<,>,=) compared to time(i) of timeblock
+
+
+
+        });
     </script>
 </body>
 
