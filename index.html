@@ -41,6 +41,8 @@
     </footer>
     <!-- link to moment.js -->
     <script src="./lib/moment/moment.js"></script>
+    
+    
     <!-- js for the scheduler header and main elements -->
     <script>
         $(document).ready(function () {
@@ -49,7 +51,8 @@
             var timeFormat = moment().format("hh:mm");
             $("#headerDateAndTime").append(timeFormat);
             var i = 0;
-            var a;
+            //var a;
+    
             
     
             for (i = 8; i < 18; i++) {
@@ -59,14 +62,20 @@
                 //set time of each block to what i equals  
                 //change to table format
             };
+
+
+
+
+           // if(localStorage)
            
            $("button").click(function(){
-           
             var saveBut = $(this).closest("tr").find(".taskText").val();
-            var textareaRevamp=$(this).closest("tr").find("#taskCol")
+            var textareaRevamp=$(this).closest("tr").find("#taskCol");
+            var textareaID=$(this).closest("tr").find(".taskText").attr("id");
+            
            //var locRow=$("#taskText8").val();
-            localStorage.setItem("task(s)", saveBut);
-            textareaRevamp.text(localStorage.getItem("task(s)"));
+            localStorage.setItem(textareaID+"key", saveBut);
+            textareaRevamp.text(localStorage.getItem(textareaID+"key"));
            });
 
             //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
