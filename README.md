@@ -15,4 +15,4 @@ Time is the name of the game with this app. A work-day schedule that changes dyn
 ### Notes:
 -elected to keep script inside index.html 
 -issue with scope and i value not staying locally inside function
--want to add a scheduler name stays after refresh (gets stored in localstorage) but can be changed when wanted(clear button)
+-want to add a scheduler name that stays after refresh (gets stored in localstorage) but can be changed when wanted(clear button)

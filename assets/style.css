@@ -30,6 +30,9 @@ th {
     border: 1px solid black;
     width:87%;
 }
+.taskText {
+    width:100%;
+}
 #saveCol{
 
 }

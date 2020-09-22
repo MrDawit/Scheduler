@@ -54,11 +54,21 @@
     
             for (i = 8; i < 18; i++) {
               //  $("table").append("<p>This is the time<p>");
-                $("table").append("<tr><td id='timeCol'>"+i+":00</td><td id='taskCol'>Place Tasks Here</td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
+                $("table").append("<tr><td id='timeCol'>"+i+":00</td><td id='taskCol'><textarea class='taskText' id='taskText"+i+"' placeholder='Place Tasks Here'></textarea></td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
                 //after scheduler works, change away from military time
                 //set time of each block to what i equals  
                 //change to table format
             };
+           
+           $("button").click(function(){
+           
+            var saveBut = $(this).closest("tr").find(".taskText").val();
+            var textareaRevamp=$(this).closest("tr").find("#taskCol")
+           //var locRow=$("#taskText8").val();
+            localStorage.setItem("task(s)", saveBut);
+            textareaRevamp.text(localStorage.getItem("task(s)"));
+           });
+
             //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
             //         $("#userName").click(function(){
 
