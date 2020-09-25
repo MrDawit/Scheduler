@@ -51,123 +51,90 @@
         var timeFormat = moment().format("hh:mm");
         $("#headerDateAndTime").append(timeFormat);
         var i = 0;
-        //var a;
+        var a = 0;
 
-        var permReplaceTextarea8 = $("table").find("#taskTD_id8").eq(0);
-        var permReplaceTextarea9 = $("table").find(".taskText").eq(1);
-        var permReplaceTextarea10 = $("table").find(".taskText").eq(2);
-        var permReplaceTextarea11 = $("table").find(".taskText").eq(3);
-        var permReplaceTextarea12 = $("table").find(".taskText").eq(4);
-        var permReplaceTextarea13 = $("table").find(".taskText").eq(5);
-        var permReplaceTextarea14 = $("table").find(".taskText").eq(6);
-        var permReplaceTextarea15 = $("table").find(".taskText").eq(7);
-        var permReplaceTextarea16 = $("table").find(".taskText").eq(8);
-        var permReplaceTextarea17 = $("table").find(".taskText").eq(9);
+        // var permReplaceTextarea8 = $("table").find("#taskTD_id8").eq(0);
+        // var permReplaceTextarea9 = $("table").find(".taskText").eq(1);
+        // var permReplaceTextarea10 = $("table").find(".taskText").eq(2);
+        // var permReplaceTextarea11 = $("table").find(".taskText").eq(3);
+        // var permReplaceTextarea12 = $("table").find(".taskText").eq(4);
+        // var permReplaceTextarea13 = $("table").find(".taskText").eq(5);
+        // var permReplaceTextarea14 = $("table").find(".taskText").eq(6);
+        // var permReplaceTextarea15 = $("table").find(".taskText").eq(7);
+        // var permReplaceTextarea16 = $("table").find(".taskText").eq(8);
+        // var permReplaceTextarea17 = $("table").find(".taskText").eq(9);
 
-        var checkLocStorage8 = localStorage.getItem("taskText8key");
-        var checkLocStorage9 = localStorage.getItem("taskText9key");
-        var checkLocStorage10 = localStorage.getItem("taskText10key");
-        var checkLocStorage11 = localStorage.getItem("taskText11key");
-        var checkLocStorage12 = localStorage.getItem("taskText12key");
-        var checkLocStorage13 = localStorage.getItem("taskText13key");
-        var checkLocStorage14 = localStorage.getItem("taskText14key");
-        var checkLocStorage15 = localStorage.getItem("taskText15key");
-        var checkLocStorage16 = localStorage.getItem("taskText16key");
-        var checkLocStorage17 = localStorage.getItem("taskText17key");
+        // var checkLocStorage8 = localStorage.getItem("taskText8key");
+        // var checkLocStorage9 = localStorage.getItem("taskText9key");
+        // var checkLocStorage10 = localStorage.getItem("taskText10key");
+        // var checkLocStorage11 = localStorage.getItem("taskText11key");
+        // var checkLocStorage12 = localStorage.getItem("taskText12key");
+        // var checkLocStorage13 = localStorage.getItem("taskText13key");
+        // var checkLocStorage14 = localStorage.getItem("taskText14key");
+        // var checkLocStorage15 = localStorage.getItem("taskText15key");
+        // var checkLocStorage16 = localStorage.getItem("taskText16key");
+        // var checkLocStorage17 = localStorage.getItem("taskText17key");
 
 
-        checkLocStorage = {
-            8: localStorage.getItem("taskText8key"),
-            9: localStorage.getItem("taskText9key"),
-            10: localStorage.getItem("taskText10key"),
-            11: localStorage.getItem("taskText11key"),
-            12: localStorage.getItem("taskText12key"),
-            13: localStorage.getItem("taskText13key"),
-            14: localStorage.getItem("taskText14key"),
-            15: localStorage.getItem("taskText15key"),
-            16: localStorage.getItem("taskText16key"),
-            17: localStorage.getItem("taskText17key"),
-            18: localStorage.getItem("taskText19key")
-        };
+        // checkLocStorage = {
+        //     8: localStorage.getItem("taskText8key"),
+        //     9: localStorage.getItem("taskText9key"),
+        //     10: localStorage.getItem("taskText10key"),
+        //     11: localStorage.getItem("taskText11key"),
+        //     12: localStorage.getItem("taskText12key"),
+        //     13: localStorage.getItem("taskText13key"),
+        //     14: localStorage.getItem("taskText14key"),
+        //     15: localStorage.getItem("taskText15key"),
+        //     16: localStorage.getItem("taskText16key"),
+        //     17: localStorage.getItem("taskText17key")
+        // };
+
+        var checkLocStorage={};
+for (a=8;a<18;a++){
+    
+    checkLocStorage[a]=localStorage.getItem("taskText"+a+"key");
+    console.log("checkLocStorage = "+checkLocStorage);
+};
 
 
         for (i = 8; i < 18; i++) {
-            //  $("table").append("<p>This is the time<p>");
-
-            //     var textareaRevamp_2=$(this).closest("tr").find("#taskCol");
-            //     //var textareaID_2=$(this).closest("tr").find(".taskText").attr("id");
-            //     var textareaID_2="taskText"+i;
-            //     var checkLocStorage =localStorage.getItem(textareaID_2+"key");
-            //    if (checkLocStorage=null || undefined){
             $("table").append("<tr><td id='timeCol'>" + i + ":00</td><td class='taskCol' id='taskTD_id" + i + "'><textarea class='taskText' id='taskText" + i + "' placeholder='Place Tasks Here'></textarea></td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
-            //    };
-            //     var textareaRevamp_2=$(this).closest("tr").find("#taskCol");
-            //     var textareaID_2=$(this).closest("tr").find(".taskText").attr("id");
-            //     var checkLocStorage = localStorage.getItem(textareaID_2+"key");
-            //     if(checkLocStorage!==null || undefined){
-            //         textareaRevamp_2.val()=checkLocStorage;
-            //     }
-
-
-            if (checkLocStorage[i] !== null || undefined) {
+            
+           
+             if (checkLocStorage[i] !== null || undefined) {
                 console.log("This row is not null or undefined");
                 console.log(i + ": " + checkLocStorage[i]);
+                $("#taskTD_id" + i).html(checkLocStorage[i]);
+                // other working option
+                // var Placer = "#taskTD_id" + i + ""
+                // $(Placer).html(checkLocStorage[i]);
             }
-
-
+            //if(checkLocStorage[i] == null || undefined){
+                
 
 
         }
-
-        // else{
-        //             // permReplaceTextarea8.html()=checkLocStorage8;
-
-
-        //fix concatenation to kinda strings to probably make this work
-        //    $('#taskTD_id').text(checkLocStorage);
-
-        //    console.log("This statement is TRUE");
-        //    console.log("if statement i= "+i);
-        // }
-        // };
-
-
-        // console.log("1= "+ textareaRevamp_2);
-        // console.log("2= "+ textareaID_2);
-        // console.log("3= "+ checkLocStorage);
-        // console.log("4= "+ textareaRevamp_2.val());
-
-        //this worked purrrfectly!
-        // if(checkLocStorage[i] !==null || undefined){
-        // console.log("This row is not null or undefined");
-        //    console.log(i + ": " + checkLocStorage[i]);
-        // }
-
-
 
         //after scheduler works, change away from military time
         //set time of each block to what i equals  
         //change to table format
         //   };
 
-        //this worked!
-        // if(checkLocStorage8!==null || undefined){
-        //       // permReplaceTextarea8.html()=checkLocStorage8;
-
-        //        $("#taskTD_id8").text(checkLocStorage8);
-
-        //        console.log("This statement is TRUE");
-
-        //};
+     
 
         $("button").click(function () {
-            var saveBut = $(this).closest("tr").find(".taskText").val();
+            var saveBut = $(this).closest("tr").find(".taskText").val().trim();
             var textareaRevamp = $(this).closest("tr").find(".taskCol");
             var textareaID = $(this).closest("tr").find(".taskText").attr("id");
-
+            //this statement along with the .trim() stops blank answers from being saved
+            if (saveBut===""){
+                return;
+            };
             //var locRow=$("#taskText8").val();
             localStorage.setItem(textareaID + "key", saveBut);
             textareaRevamp.text(localStorage.getItem(textareaID + "key"));
+
+
         });
 
             //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
@@ -181,8 +148,7 @@
 
             //function to change background color of time blocks from past, present, and future
             //same function will have intervals (<,>,=) compared to time(i) of timeblock
-
-
+            
 
 
     </script>
