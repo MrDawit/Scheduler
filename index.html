@@ -48,7 +48,7 @@
 
         var dateFormat = moment().format("MMM/DD/YYYY dddd");
         $("#headerDateAndTime").append(dateFormat + "<br>");
-        var timeFormat = moment().format("hh:mm");
+        var timeFormat = moment().format("hh:mm A");
         $("#headerDateAndTime").append(timeFormat);
         var i = 0;
         var a = 0;
@@ -89,45 +89,67 @@
         //     17: localStorage.getItem("taskText17key")
         // };
 
-        var checkLocStorage={};
-for (a=8;a<18;a++){
-    
-    checkLocStorage[a]=localStorage.getItem("taskText"+a+"key");
-    console.log("checkLocStorage = "+checkLocStorage);
-};
+        var checkLocStorage = {};
+        var checkTime = moment().format("H");
+        for (a = 8; a < 18; a++) {
+
+            checkLocStorage[a] = localStorage.getItem("taskText" + a + "key");
+            console.log("checkLocStorage = " + checkLocStorage);
+
+
+
+
+        };
 
 
         for (i = 8; i < 18; i++) {
             $("table").append("<tr><td id='timeCol'>" + i + ":00</td><td class='taskCol' id='taskTD_id" + i + "'><textarea class='taskText' id='taskText" + i + "' placeholder='Place Tasks Here'></textarea></td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
-            
-           
-             if (checkLocStorage[i] !== null || undefined) {
+
+
+            if (checkLocStorage[i] !== null || undefined) {
                 console.log("This row is not null or undefined");
                 console.log(i + ": " + checkLocStorage[i]);
                 $("#taskTD_id" + i).html(checkLocStorage[i]);
                 // other working option
                 // var Placer = "#taskTD_id" + i + ""
                 // $(Placer).html(checkLocStorage[i]);
-            }
+            };
             //if(checkLocStorage[i] == null || undefined){
-                
+
+            //past timeblock
+            if (checkTime > i) {
+                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:red; opacity:80%;color:black");
+                //console.log("The Past: "+ i);
+            };
+            //present timeblock
+            if (checkTime == i) {
+                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:yellow; opacity:80%;color:red");
+                //  console.log("The Present: "+ i);
+            };
+            //future timeblock
+            if (checkTime < i) {
+                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:grey; opacity:80%;color:dark purple");
 
 
-        }
+                //console.log("The Future: "+ i);
+            };
+
+
+        };
 
         //after scheduler works, change away from military time
         //set time of each block to what i equals  
         //change to table format
         //   };
 
-     
+
 
         $("button").click(function () {
             var saveBut = $(this).closest("tr").find(".taskText").val().trim();
             var textareaRevamp = $(this).closest("tr").find(".taskCol");
             var textareaID = $(this).closest("tr").find(".taskText").attr("id");
             //this statement along with the .trim() stops blank answers from being saved
-            if (saveBut===""){
+            if (saveBut === "") {
                 return;
             };
             //var locRow=$("#taskText8").val();
@@ -148,7 +170,11 @@ for (a=8;a<18;a++){
 
             //function to change background color of time blocks from past, present, and future
             //same function will have intervals (<,>,=) compared to time(i) of timeblock
-            
+            // for (a=8;a<18;a++){
+            //   //  $("#taskTD_id"+a).attr("class",a);
+            //     $("#taskTD_id" + a).attr("class", function() { return $(this).attr("class") + " " + a} );
+            //         $(this).;
+            // }
 
 
     </script>

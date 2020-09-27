@@ -33,7 +33,8 @@ th {
 .taskText {
     width:100%;
 }
-#saveCol{
+.taskCol{
+    border: 1px solid black;
 
 }
 button{
