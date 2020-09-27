@@ -1,27 +1,43 @@
 header {
+    background-image: url("../assets/images/photo-1600592858560-9fef0f602f40.jpg");
+    background-size: cover;
+   
+
+
     text-align:center;
-    text-emphasis:underline;
     border-bottom:10px solid purple;
 }
+h1{
+    text-decoration: underline;
+    
+}
 
+body{
+    background-color: rgb(49, 48, 48);
+}
 table{
     margin-top:20px;
     margin-left:20px;
     width:90%;
+    
 }
 
 th {
     font-size:20px;
     text-align:center;
     text-decoration: underline;
+    
 }
-
+#firstRow #taskCol{
+    background-color: white;
+}
 #timeCol {
     /* padding-right:2.5%;
     padding-left:2.5%; */
     text-align:center;
     border: 1px solid black;
     width: 5%;
+    background-color: white;
 
 }
 

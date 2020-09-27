@@ -13,15 +13,18 @@
 <body>
     <!-- add scroll -->
     <header id="heading">
-        <h1>Scheduler</h1>
-        <nav id="headerDateAndTime">
+        <h1>A Hard Day's Work:</h1>
+        <h3>a scheduler for the work day</h3>
+        <nav>
+        <div id="headerDate"></div>
+        <div id="headerTime"></div>
         </nav>
     </header>
     <main>
         <!-- <input type="text" name="user">
        <button id="userName">Press to Display</button> -->
         <table>
-            <tr>
+            <tr id="firstRow">
                 <th id="timeCol">Time</th>
                 <th id="taskCol">Task</th>
                 <th id="saveCol"></th>
@@ -47,12 +50,28 @@
         var i = 0;
         var a = 0;
         var dateFormat = moment().format("MMM/DD/YYYY dddd");
-        var timeFormat = moment().format("hh:mm A");
+        var datetime = 0;
         var checkTime = moment().format("H");
         var checkLocStorage = {};
+        var currentTime = function () {
+    //declaring moment() outside update function causes a variable scope issue
+    datetime.html(moment().format("hh:mm:ss A"));
+};
+
+
+    datetime = $('#headerTime')
+    currentTime();
+    setInterval(currentTime, 1000);
+
+
+     
+        
         //time stamp
-        $("#headerDateAndTime").append(dateFormat + "<br>");
-        $("#headerDateAndTime").append(timeFormat);
+       $("#headerDate").html(dateFormat + "<br>");
+        $("nav").attr("style","font-weight:bold");
+       
+
+
         //adding to checkLocStorage object
         for (a = 8; a < 18; a++) {
             checkLocStorage[a] = localStorage.getItem("taskText" + a + "key");
@@ -63,8 +82,7 @@
 
 
             if (checkLocStorage[i] !== null || undefined) {
-                console.log("This row is not null or undefined");
-                console.log(i + ": " + checkLocStorage[i]);
+                
                 $("#taskTD_id" + i).html(checkLocStorage[i]);
             };
             //past timeblock
@@ -73,7 +91,7 @@
             };
             //present timeblock
             if (checkTime == i) {
-                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:yellow; opacity:90%;color:red");
+                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:white; opacity:90%;color:black");
             };
             //future timeblock
             if (checkTime < i) {
