@@ -83,7 +83,3 @@ footer{
     border-color: rgb(23, 2, 37);
     padding:2px 2px 0px 2px;
 }
-
-::placeholder{
-    color:black;
-}
