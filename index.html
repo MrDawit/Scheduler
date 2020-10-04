@@ -30,6 +30,7 @@
                 <th id="saveCol"></th>
             </tr>
         </table>
+      
     </main>
     <!-- signiture footer -->
     <footer>
@@ -43,82 +44,7 @@
 
 
     <!-- js for the scheduler header and main elements -->
-    <script>
-        var saveBut;
-        var textareaRevamp;
-        var textareaID;
-        var i = 0;
-        var a = 0;
-        var dateFormat = moment().format("MMM/DD/YYYY dddd");
-        var datetime = 0;
-        var checkTime = moment().format("H");
-        var checkLocStorage = {};
-        var currentTime = function () {
-    //declaring moment() outside update function causes a variable scope issue
-    datetime.html(moment().format("hh:mm:ss A"));
-};
-
-
-    datetime = $('#headerTime')
-    currentTime();
-    setInterval(currentTime, 1000);
-
-
-     
-        
-        //time stamp
-       $("#headerDate").html(dateFormat + "<br>");
-        $("nav").attr("style","font-weight:bold");
-       
-
-
-        //adding to checkLocStorage object
-        for (a = 8; a < 18; a++) {
-            checkLocStorage[a] = localStorage.getItem("taskText" + a + "key");
-        };
-        //adding timeblocks to table and using this for loop to set color to timeblocks comparing the hour of the day 
-        for (i = 8; i < 18; i++) {
-            $("table").append("<tr><td id='timeCol'>" + i + ":00</td><td class='taskCol' id='taskTD_id" + i + "'><textarea class='taskText' id='taskText" + i + "' placeholder='Place Tasks Here'></textarea></td><td id='saveCol'><button id='saveBtn'>Save</button></td></tr>");
-
-
-            if (checkLocStorage[i] !== null || undefined) {
-                
-                $("#taskTD_id" + i).html(checkLocStorage[i]);
-            };
-            //past timeblock
-            if (checkTime > i) {
-                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:red; opacity:80%;color:black");
-            };
-            //present timeblock
-            if (checkTime == i) {
-                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:white; opacity:90%;color:black");
-            };
-            //future timeblock
-            if (checkTime < i) {
-                $("#taskTD_id" + i).add("#taskText" + i).attr("style", "background:grey; opacity:100%;color:black");
-            };
-        };
-
-        //after clicking save button, function replaces textarea with saved localStorage text
-        $("button").click(function () {
-            saveBut = $(this).closest("tr").find(".taskText").val().trim();
-            textareaRevamp = $(this).closest("tr").find(".taskCol");
-            textareaID = $(this).closest("tr").find(".taskText").attr("id");
-            //this statement along with the .trim() stops blank answers from being saved
-            if (saveBut === "") {
-                return;
-            };
-            localStorage.setItem(textareaID + "key", saveBut);
-            textareaRevamp.text(localStorage.getItem(textareaID + "key"));
-        });
-
-            //after scheduler works, change away from military time
-            //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
-            //         $("#userName").click(function(){
-            // var Name = $("input").val();
-            // //make if statement clearing the input and button on refresh if there is already a name for the scheduler in local storage
-            //         $("table").prepend();
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
