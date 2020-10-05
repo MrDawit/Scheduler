@@ -1,32 +1,24 @@
 header{
     background-image: url("../assets/images/photo-1600592858560-9fef0f602f40.jpg");
     background-size: cover;
-   
-
-
     text-align:center;
     border-bottom:10px solid purple;
 }
 h1{
     text-decoration: underline;
-    
 }
-
 body{
     background-color: rgb(49, 48, 48);
 }
 table{
     margin-top:20px;
     margin-left:20px;
-    width:90%;
-    
+    width:90%;   
 }
-
 th {
     font-size:20px;
     text-align:center;
-    text-decoration: underline;
-    
+    text-decoration: underline;   
 }
 #firstRow #taskCol{
     background-color: white;
@@ -38,9 +30,7 @@ th {
     border: 1px solid black;
     width: 5%;
     background-color: white;
-
 }
-
 #taskCol {
     padding-left:2.5%;
     border: 1px solid black;
@@ -52,7 +42,6 @@ th {
 .taskCol{
     border: 1px solid black;
     font-weight: bold;
-
 }
 button{
     padding: 10px 30px;
@@ -62,7 +51,6 @@ button{
     border: none;
     border-radius: 0 50px 50px 0;
 }
-
 button:hover{
     color:gold;
     font-weight:bold;
@@ -72,7 +60,6 @@ button:hover{
     font-size: .75em;
     border-radius: 50px;
 }
-
 footer{
    /* removed position:fixed; bottom:0; -added position:relative; width and margin-left to previous signature footer*/
     position:relative;
@@ -86,3 +73,52 @@ footer{
     border-color: rgb(23, 2, 37);
     padding:2px 2px 0px 2px;
 }
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0; /* Stay on the left side */
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+} 
+  /* The navigation menu links */
+.sidenav label {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}  
+  /* When you mouse over the navigation links, change their color */
+.sidenav label:hover {
+    color: #f1f1f1;
+}  
+  /* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    color: gold;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#sideNavbtn{    
+        font-size: 1em;
+        background-color: purple;
+        color: gold;
+        border-radius:25%;
+}
+#sideNavbtn:hover {
+        box-shadow: 0 20px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        background-color: indigo;
+      }
+#clearALLtasks{
+border-radius:50px;
+}
+
+  /*think about changing NAV button to match the grey look, might make a big difference

@@ -1,6 +1,15 @@
 # Scheduler
 <img src="./assets/images/Scheduler.png">
 
+## Purpose:
+Time is the name of the game with this app. A work-day schedule that changes dynamically using javascript and jquery. This scheduler has the ability to save your tasks by hour and let you know which tasks haven't met their deadline (there is still time!). 
+
+## Created By:
+Shalom Dawit\
+LinkedIn:https://www.linkedin.com/in/shalom-dawit-a0a5a4126 \
+GitHub:https://github.com/MrDawit \
+Email:Shalom.Dawit@gmail.com \
+
 ## Technologies Used:
 * Javascript
 * Jquery library
@@ -10,22 +19,12 @@
 * HTML
 * CSS
 
-## Purpose:
-Time is the name of the game with this app. A work-day schedule that changes dynamically using javascript and jquery. This scheduler has the ability to save your tasks by hour and let you know which tasks haven't met their deadline (there is still time!). 
-
 ## Files Included:
 * script.js
 * moment.js
 * index.html
 * style.css
 * readme.md
-
-## Created By:
-Shalom Dawit\
-LinkedIn:https://www.linkedin.com/in/shalom-dawit-a0a5a4126 \
-GitHub:https://github.com/MrDawit \
-Email:Shalom.Dawit@gmail.com \
-
 
 ## Notes:
 * issues with scope and i value were fixed
