@@ -32,4 +32,4 @@ Email:Shalom.Dawit@gmail.com \
 
 <img src="./assets/images/Scheduler.png">
 
-<img src="./Scheduler.mp4">
+<img src="./Scheduler.gif">
