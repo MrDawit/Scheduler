@@ -49,7 +49,7 @@ button{
     font-weight: bold;
     background: gold;
     border: none;
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 25% 25% 0;
 }
 button:hover{
     color:gold;
@@ -58,7 +58,7 @@ button:hover{
 }
 .clearBtn{
     font-size: .75em;
-    border-radius: 50px;
+    border-radius: 25%;
 }
 footer{
    /* removed position:fixed; bottom:0; -added position:relative; width and margin-left to previous signature footer*/
@@ -111,7 +111,7 @@ footer{
         font-size: 1em;
         background-color: purple;
         color: gold;
-        border-radius:25%;
+        border-radius:0 0 25% 25%;
 }
 #sideNavbtn:hover {
         box-shadow: 0 20px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);

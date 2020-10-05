@@ -29,12 +29,12 @@ $(document).ready(function () {
             $("#taskTD_id" + digit).add("#taskText" + digit).attr("style", "background:grey; opacity:100%;color:black");
         };
     }
-    /* sidenav opener */
+    //sidenav opener 
     function openNav() {
         document.getElementById("sideNav").style.width = "400px";
         document.getElementById("main").style.marginLeft = "400px";
     }
-    /* sidenav closer */
+    //sidenav closer
     function closeNav() {
         document.getElementById("sideNav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
@@ -55,17 +55,16 @@ $(document).ready(function () {
             timeBlockColoring(i);
         };
     };
-    
+
     currentTime();
     setInterval(currentTime, 1000);
     //time stamp
     $("#headerDate").html(dateFormat + "<br>");
     $("nav").attr("style", "font-weight:bold");
     arrangeTable();
-    //clear event inside sidenav
+    //button inside sidenav to clear tasks
     $("#clearALLtasks").click(function () {
         localStorage.clear();
-        //timeBlockColoring();
     });
     //after clicking save button, function replaces textarea with saved localStorage text
     $(".saveBtn").click(function () {
@@ -88,39 +87,19 @@ $(document).ready(function () {
         textareaRevamp2.html("<textarea class='taskText' id='taskText" + taskTextDigit[0] + "' placeholder='Place Tasks Here'></textarea>");
         timeBlockColoring(taskTextDigit[0]);
     });
-    //after scheduler works, change away from military time
+    //event to open sidenav
+    $("#sideNavbtn").click(function () {
+        openNav()
+    });
+    //event to close sidenav
+    $(".closebtn").click(function () {
+        closeNav()
+        location.reload();
+    });
+});
+ //after scheduler works, change away from military time
     //use an input box to specify caption above table. save this data to local storage, then use js to place it in the table using prepend (all the rows)
     //         $("#userName").click(function(){
     // var Name = $("input").val();
     // //make if statement clearing the input and button on refresh if there is already a name for the scheduler in local storage
     //         $("table").prepend();
-    $("#sideNavbtn").click(function () {
-        openNav()
-    });
-    //the event that needs all the events to be recalled
-    $(".closebtn").click(function () {
-        closeNav()
-        $("table").html("");
-        arrangeTable();
-        //after clicking save button, function replaces textarea with saved localStorage text
-        $(".saveBtn").click(function () {
-            saveBut = $(this).closest("tr").find(".taskText").val().trim();
-            textareaRevamp = $(this).closest("tr").find(".taskCol");
-            textareaID = $(this).closest("tr").find(".taskText").attr("id");
-            //this statement along with the .trim() stops blank answers from being saved
-            if (saveBut === "") {
-                return;
-            };
-            localStorage.setItem(textareaID + "key", saveBut);
-            textareaRevamp.text(localStorage.getItem(textareaID + "key"));
-        });
-        $(".clearBtn").click(function () {
-            textareaRevamp2 = $(this).closest("tr").find(".taskCol");
-            textareaID2 = textareaRevamp2.attr("id");
-            taskTextDigit = textareaID2.match(/(\d+)/);
-            localStorage.setItem("taskText" + taskTextDigit[0] + "key", "");
-            textareaRevamp2.html("<textarea class='taskText' id='taskText" + taskTextDigit[0] + "' placeholder='Place Tasks Here'></textarea>");
-            timeBlockColoring(taskTextDigit[0]);
-        });
-    });
-});
