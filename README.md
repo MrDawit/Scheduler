@@ -1,5 +1,4 @@
 # Scheduler
-<img src="./assets/images/Scheduler.png">
 
 ## Purpose:
 Time is the name of the game with this app. A work-day schedule that changes dynamically using javascript and jquery. This scheduler has the ability to save your tasks by hour and let you know which tasks haven't met their deadline (there is still time!). 
@@ -31,4 +30,6 @@ Email:Shalom.Dawit@gmail.com \
 * sidenav gives flexibility to add more functionality
 * want to add a scheduler name that stays after refresh (gets stored in localstorage) but can be changed when wanted(clear button)
 
-<video src="./Scheduler.mp4">
+<img src="./assets/images/Scheduler.png">
+
+<img src="./Scheduler.mp4">
