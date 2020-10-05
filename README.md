@@ -28,4 +28,7 @@ Email:Shalom.Dawit@gmail.com \
 
 ## Notes:
 * issues with scope and i value were fixed
+* sidenav gives flexibility to add more functionality
 * want to add a scheduler name that stays after refresh (gets stored in localstorage) but can be changed when wanted(clear button)
+
+<video src="./Scheduler.mp4">
