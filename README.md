@@ -1,5 +1,5 @@
 # Scheduler
-live link: https://MrDawit.github.io/Scheduler \
+live link: https://MrDawit.github.io/Scheduler 
 ## Purpose:
 Time is the name of the game with this app. A work-day schedule that changes dynamically using javascript and jquery. This scheduler has the ability to save your tasks by hour and let you know which tasks haven't met their deadline (there is still time!). 
 
@@ -7,7 +7,7 @@ Time is the name of the game with this app. A work-day schedule that changes dyn
 Shalom Dawit\
 LinkedIn:https://www.linkedin.com/in/shalom-dawit-a0a5a4126 \
 GitHub:https://github.com/MrDawit \
-Email:Shalom.Dawit@gmail.com \
+Email:Shalom.Dawit@gmail.com 
 
 ## Technologies Used:
 * Javascript
