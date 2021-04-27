@@ -60,8 +60,8 @@ button:hover{
     font-size: .75em;
     border-radius: 25%;
 }
-footer{
-   /* removed position:fixed; bottom:0; -added position:relative; width and margin-left to previous signature footer*/
+/* footer{
+  
     position:relative;
     width:15%;
     margin-left:42.5%;
@@ -72,7 +72,7 @@ footer{
     border-width:2px;
     border-color: rgb(23, 2, 37);
     padding:2px 2px 0px 2px;
-}
+} */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -120,5 +120,68 @@ footer{
 #clearALLtasks{
 border-radius:50px;
 }
+
+
+
+
+footer{
+    background-image: url("./assets/images/clouds.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+   #outer_footer{
+    position:sticky;
+    bottom:0;
+    text-align:right;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-style:solid;
+    border-width:2px;
+    border-color: rgb(23, 2, 37);
+    padding:2px 2px 0px 2px;
+  color:black;
+  /* added opacity to background-color style */
+  background-color:rgb(156, 7, 156,0.4);
+  
+  
+  }
+  
+  .footerRow {
+    margin-right:0px;
+  }
+  
+  
+  
+  #texting, #image{
+  color:black;
+    /*text-align:center; */
+    /* background-color:rgb(130, 132, 175);*/
+    /* background: linear-gradient(45deg,black,indigo, #053ea8, #7a00ff);  */
+    background: linear-gradient(90deg,rgb(170, 153, 2),rgb(250, 192, 2),rgb(241, 245, 2));
+    background-clip:border-box;
+    font-weight: normal;
+    border-right:  3px solid black;
+    border-left:   3px solid black;
+  }
+  
+  #texting {
+    border-top: 2px solid black;
+  }
+  #image {
+    border-bottom: 2px solid black;
+    font-size: small;
+  }
+  
+  #outer_footer:hover #texting{
+    color:gold;
+    /* background:indigo; */
+    background: linear-gradient(90deg,rgb(65, 7, 107),rgb(112, 16, 180),rgb(171, 71, 243));
+  }
+  #outer_footer:hover #image{
+    color:gold;
+    /* background:indigo; */
+    background: linear-gradient(90deg,rgb(65, 7, 107),rgb(112, 16, 180),rgb(171, 71, 243));
+  }
+  
 
   /*think about changing NAV button to match the grey look, might make a big difference
